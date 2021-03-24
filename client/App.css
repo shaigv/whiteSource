@@ -1,0 +1,20 @@
+.ui.inverted.black.button, .ui.inverted.black.buttons .button{
+    color: black;
+}
+.ui.form .field>.selection.dropdown {
+width: 0.1px;
+}
+.container{
+    display:flex;
+}
+.child{
+    flex:1;
+}
+
+.width2{
+    width: 2vh;
+}
+
+.circle {
+    border-radius: 35% !important;
+}
