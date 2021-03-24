@@ -3,7 +3,6 @@ import Dropdown from './Dropdown'
 import Search from './Search'
 import View from './View'
 import h2Api from '../api/h2'
-import _ from 'lodash';
 import '../App.css';
 import Page from './paging'
 
@@ -29,9 +28,8 @@ const Table = () => {
 
   const handelFilter = (score) => {
     if (score === -1) return;
-    if (score === 0) getAllReviews();//setReviews(allData);
+    if (score === 0) getAllReviews();
     else
-      //setReviews(allData.filter(review => parseInt(review.score) === score));
       getAllReviewsFilter(score);
   }
 
@@ -41,8 +39,7 @@ const Table = () => {
   }, [page]);
 
   const getAllReviews = async (page_) => {
-    const response = await h2Api.get(`/reviews/page/${page}/3`, {
-      ///reviews/page/{from}/{to}
+    const response = await h2Api.get(`/reviews/page/${page}/10`, {
 
     });
     setReviews(response.data);
@@ -60,7 +57,6 @@ const Table = () => {
   };
 
   const onPageChange=(page)=>{
-      //getAllReviews(page);
       setPage(page-1);
   }
 

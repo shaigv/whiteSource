@@ -91,7 +91,6 @@ const Dropdown = (props) => {
 
           <i className="star icon" ></i>
 
-          {/* <i className="dropdown icon"></i> */}
           <div className="text">{selected.label}</div>
           <div className={`menu ${open ? 'visible transition' : ''}`}>
             {renderedOptions}
