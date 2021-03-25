@@ -14,7 +14,7 @@ public interface ReviewRepository extends CrudRepository<Review, String>
 	
 //	@Query(value ="select *  from review group by PRODUCT_ID order by count(PRODUCT_ID) ",nativeQuery = true)
 	
-//	@Query(value ="SELECT new com.model.Statics(r.PRODUCT_ID,count(r.PRODUCT_ID))"  +
+//	@Query(value ="SELECT new com.model.FoodStat(r.PRODUCT_ID,count(r.PRODUCT_ID))"  +
 //				 " FROM REVIEW r "+
 //				 "GROUP BY r.PRODUCT_ID "
 //				+ "ORDER BY COUNT(r.PRODUCT_ID ) DESC "

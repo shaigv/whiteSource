@@ -19,7 +19,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.model.Review;
-import com.model.Statics;
+import com.model.ReviewStat;
+import com.model.FoodStat;
 import com.service.ReviewService;
 
 
@@ -125,9 +126,15 @@ public static Review createReview(String[] attributes)
 	}
 	@GetMapping("/reviews/foodstat")
 	//private List<Review> getFoodStat()
-	private List<Statics> getFoodStat()
+	private List<FoodStat> getFoodStat()
 	{
 		return reviewService.getFoodStat();
+	}
+	@GetMapping("/reviews/reviewstat")
+	//private List<Review> getFoodStat()
+	private List<ReviewStat> getReviewStat()
+	{
+		return reviewService.getReviewStat();
 	}
 	
 	@GetMapping("/reviews/page/{from}/{to}")

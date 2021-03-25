@@ -7,8 +7,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import com.model.FoodStat;
+import com.model.ReviewStat;
 
-public interface ReviewRepositorystat extends CrudRepository<FoodStat, String>
+public interface ReviewRepositorystatR extends CrudRepository<ReviewStat, String>
 	{
 		
 	
@@ -21,8 +22,8 @@ public interface ReviewRepositorystat extends CrudRepository<FoodStat, String>
 //					+ "ORDER BY COUNT(r.PRODUCT_ID ) DESC "
 //					+ "limit 10 ",nativeQuery = true)
 	//	
-		@Query(value ="SELECT PRODUCT_ID,count(PRODUCT_ID) as count FROM REVIEW group by PRODUCT_ID order by count(PRODUCT_ID) limit 10 ",nativeQuery = true)
-		public  List<FoodStat> findFoodStat();
+		@Query(value ="SELECT PROFILE_NAME,count(PROFILE_NAME) as count FROM REVIEW group by PROFILE_NAME  order by count(PROFILE_NAME ) limit 10 ",nativeQuery = true)
+		public  List<ReviewStat> findReviewStat();
 		//public List<Review> findFoodStat();
 		//SELECT count(productId) FROM REVIEW GROUP BY productId ORDER BY COUNT(productId) DESC
 		//GROUP BY productId 

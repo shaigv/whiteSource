@@ -11,10 +11,12 @@ import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 
 import com.model.Review;
-import com.model.Statics;
+import com.model.ReviewStat;
+import com.model.FoodStat;
 import com.repository.ReviewRepository;
 import com.repository.ReviewRepositoryPage;
 import com.repository.ReviewRepositorystat;
+import com.repository.ReviewRepositorystatR;
 //defining the business logic
 @Service
 public class ReviewService 
@@ -25,6 +27,8 @@ public class ReviewService
 	ReviewRepositoryPage reviewRepositoryPage;
 	@Autowired
 	ReviewRepositorystat reviewRepositorystat;
+	@Autowired
+	ReviewRepositorystatR reviewRepositorystatR;
 	//getting all review records
 	public List<Review> getAllReview() 
 	{
@@ -55,11 +59,15 @@ public class ReviewService
 		return reviewRepositoryPage.findByScore(score, paging) ;		
 	}
 	//public List<Review> getFoodStat() {
-		public List<Statics> getFoodStat() {
+		public List<FoodStat> getFoodStat() {
 		// TODO Auto-generated method stub
 		   return reviewRepositorystat.findFoodStat();
 		   
 	}
+		public List<ReviewStat> getReviewStat() {
+			// TODO Auto-generated method stub
+			return reviewRepositorystatR.findReviewStat();
+		}
 	
 
 
